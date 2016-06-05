@@ -60,4 +60,19 @@ public class MySqlC {
         }
         return rs;
     }
+    
+ /**
+ * Con el metodo accion puedes hacer tanto un insert, delete o uptade ya que la consulta la envias por el String
+ * @param sql String que corresponde a la accion que queremos realizar
+ */    
+
+    public void accion(String sql){
+        try {
+            stmt = (Statement) conn.createStatement();
+            String sqlC = sql;
+            stmt.executeUpdate(sql); 
+        } catch (SQLException ex) {
+            Logger.getLogger(MySqlC.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
 }
