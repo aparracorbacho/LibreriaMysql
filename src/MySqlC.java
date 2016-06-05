@@ -46,6 +46,17 @@ public class MySqlC {
     }
     
  /**
+ * Creamos el metodo para cerrar conexion con la base de datos
+ */
+     public void close(){
+        try {
+            conn.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(MySqlC.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+ /**
  * Con el metodo consulta devuelves un ResulSet de la consulta que has ejecutado
  * @param sql String que corresponde a la consulta que queremos hacer
  * @return Devuelve un valor ResultSet con la consulta
